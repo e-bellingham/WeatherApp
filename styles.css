@@ -1,0 +1,90 @@
+body {
+  background: radial-gradient(
+    circle at 74.2% 50.9%,
+    rgb(14, 72, 222) 5.2%,
+    rgb(3, 22, 65) 75.3%
+  );
+}
+.heading-container {
+  margin: 20px auto;
+  max-width: 800px;
+  background: rgba(165, 191, 255, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.city-button {
+  border: none;
+  background: none;
+  color: white;
+  margin-top: 10px;
+  margin-left: 2px;
+}
+h2 {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+.DDT {
+  text-align: center;
+  color: white;
+}
+
+.container-today {
+  text-align: center;
+  margin: 20px auto;
+}
+.sun {
+  font-size: 150px;
+  text-align: center;
+}
+ul {
+  padding-top: 55px;
+}
+li {
+  color: white;
+  font-size: large;
+  margin-top: 8px;
+  list-style: none;
+  text-align: left;
+}
+#celcius-link {
+  color: White;
+}
+#fahrenheit-link {
+  color: white;
+}
+.container-hourly {
+  margin: 20px auto;
+  max-width: 800;
+  padding: 20px;
+}
+.hourly {
+  font-size: 19px;
+  text-align: left;
+}
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.container-tomorrow {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 30px;
+}
+.icons {
+  text-align: center;
+  font-size: 50px;
+}
+.Temp {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+}
