@@ -45,6 +45,9 @@ currentDate.innerHTML = `${month} ${date}, ${year}`;
 
 //Challenge Search engine changes location on page:
 function displayWeatherCondition(response) {
+  // document
+  //   .querySelector("#icon")
+  //   .setAttribute("src", `https://openweathermap.org/img/wn/04d@2x.png`);
   document.querySelector("#location").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp

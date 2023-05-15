@@ -50,19 +50,22 @@ small {
   border: none;
   background: none;
   color: white;
-  margin: 10px, 4px, 4px, 4px;
+  margin-top: 10px;
 }
 .city-button:hover {
   transition: ease-in-out;
-  font-size: 20px;
-  position: relative;
+  color: rgb(45, 45, 44);
 }
 .DDT {
   text-align: center;
   color: white;
   font-size: 18px;
-  font-weight: 300;
   height: 55px;
+  font-weight: 200px;
+}
+.container-today {
+  text-align: center;
+  margin: 20px auto;
 }
 .weather-temperature .units {
   color: white;
@@ -73,7 +76,6 @@ small {
 .weather-info {
   font-weight: 200px;
 }
-
 .icons {
   text-align: center;
   font-size: 50px;
@@ -83,10 +85,6 @@ small {
   height: 64px;
   width: 64px;
   text-align: center;
-}
-.container-today {
-  text-align: center;
-  margin: 20px auto;
 }
 .container-tomorrow {
   margin-top: 30px;
@@ -105,8 +103,6 @@ small {
 
 #search-form {
   margin-top: 10px;
-}
-/#search-text-input {
 }
 #current-temp {
   padding-left: 10px;
