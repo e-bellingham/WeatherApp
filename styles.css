@@ -100,7 +100,9 @@ small {
   font-size: 19px;
   text-align: left;
 }
-
+.weeklyTemp {
+  color: white;
+}
 #search-form {
   margin-top: 10px;
 }
@@ -125,4 +127,8 @@ small {
   color: rgb(45, 45, 44);
   text-decoration: none;
   transition: ease-in-out;
+}
+#weekdays {
+  font-size: 18px;
+  color: white;
 }
