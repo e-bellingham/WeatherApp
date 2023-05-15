@@ -56,15 +56,11 @@ function displayWeatherCondition(response) {
     response.data.wind.deg;
   document.querySelector("#current-humidity").innerHTML =
     response.data.main.humidity;
-
-  console.log(response);
 }
-
 function search(event) {
   event.preventDefault();
   let apiKey = "11976d7c9e336e8e53bba53c9faf5b9e";
   let city = document.querySelector("#search-text-input").value;
-
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherCondition);

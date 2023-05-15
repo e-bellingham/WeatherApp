@@ -50,7 +50,7 @@
             </form>
           </div>
         </div>
-        <h2 id="location">Current Location</h2>
+        <h2 id="location">Search Location</h2>
         <h3 class="DDT">
           <span id="current-day"></span> | <span id="current-date"></span> |
           <span id="current-time"></span>
@@ -58,7 +58,7 @@
         <div class="container-today">
           <div class="row">
             <div class="col">
-              <div class="clearfix">
+              <div class="clearfix weather-temperature">
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                   alt="clear-weather"
@@ -66,7 +66,7 @@
                   id="sun"
                 />
                 <div class="float-left">
-                  <span id="current-temp">12</span
+                  <span id="current-temp"></span
                   ><small class="units">
                     <a href="#" id="celcius-link">°C </a>|
                     <a href="#" id="fahrenheit-link">°F</a></small
@@ -77,11 +77,8 @@
             <div class="col">
               <ul>
                 <li>
-                  <strong class="weather-info">Precipitation: </strong>
-                </li>
-                <li>
                   <strong class="weather-info">Wind: </strong
-                  ><span id="current-wind-speed"></span> kts/
+                  ><span id="current-wind-speed"></span> kts /
                   <span id="current-wind-direction"></span>°
                 </li>
                 <li>

@@ -50,8 +50,12 @@ small {
   border: none;
   background: none;
   color: white;
-  margin-top: 10px;
-  margin-left: 2px;
+  margin: 10px, 4px, 4px, 4px;
+}
+.city-button:hover {
+  transition: ease-in-out;
+  font-size: 20px;
+  position: relative;
 }
 .DDT {
   text-align: center;
@@ -60,9 +64,12 @@ small {
   font-weight: 300;
   height: 55px;
 }
-.units {
+.weather-temperature .units {
   color: white;
+  top: -32px;
+  position: relative;
 }
+
 .weather-info {
   font-weight: 200px;
 }
@@ -99,6 +106,8 @@ small {
 #search-form {
   margin-top: 10px;
 }
+/#search-text-input {
+}
 #current-temp {
   padding-left: 10px;
   font-size: 64px;
@@ -110,4 +119,14 @@ small {
 }
 #fahrenheit-link {
   color: white;
+}
+#celcius-link:hover {
+  color: rgb(45, 45, 44);
+  transition: ease-in-out;
+  text-decoration: none;
+}
+#fahrenheit-link:hover {
+  color: rgb(45, 45, 44);
+  text-decoration: none;
+  transition: ease-in-out;
 }
