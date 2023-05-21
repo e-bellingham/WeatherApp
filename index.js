@@ -43,7 +43,38 @@ let dateInput = `${month} ${date}, ${year}`;
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${month} ${date}, ${year}`;
 
-//Challenge Search engine changes location on page:
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row" id="weekdays">`;
+  forecastHTML =
+    forecastHTML +
+    `
+  <div class="col-2">
+    <div class="weather-forecast-date">Monday</div>
+    <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36" />
+    <div class="weather-forecast-temperature">
+      <span class="weather-forecast-temperature-max">18° </span>
+      <span class="weather-forecast-temperature-min">12°</span>
+    </div>
+  </div>`;
+
+  forecastHTML =
+    forecastHTML +
+    `
+  <div class="col-2">
+    <div class="weather-forecast-date">Monday</div>
+    <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36" />
+    <div class="weather-forecast-temperature">
+      <span class="weather-forecast-temperature-max">18° </span>
+      <span class="weather-forecast-temperature-min">12°</span>
+    </div>
+  </div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   // document
   //   .querySelector("#icon")
@@ -84,6 +115,8 @@ function search(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
+displayForecast();
+
 //Temperature Units °C & °F for current temp
 function convertToFahrenheit(event) {
   event.preventDefault();
@@ -105,3 +138,7 @@ function convertToCelcius(event) {
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", convertToCelcius);
+//building Weekly Forecast:
+// 1st- build HTML and CSS for forecast
+// 2nd -Add API call to get the forecast; API
+// 3rd- replace fake data with real data; JS
