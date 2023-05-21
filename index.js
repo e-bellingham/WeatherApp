@@ -43,7 +43,8 @@ let dateInput = `${month} ${date}, ${year}`;
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${month} ${date}, ${year}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row" id="weekdays">`;
@@ -63,15 +64,16 @@ function displayForecast() {
     </div>
   </div>`;
   });
-
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(coordinates) {
+  let apiKey = "210d99196a88b9257ed8cb3535a0a0c5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
+}
 function displayWeatherCondition(response) {
-  // document
-  //   .querySelector("#icon")
-  //   .setAttribute("src", `https://openweathermap.org/img/wn/04d@2x.png`);
   document.querySelector("#location").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
@@ -89,8 +91,10 @@ function displayWeatherCondition(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  console.log(response);
+
+  getForecast(response.data.coord);
 }
+
 function search(event) {
   event.preventDefault();
   let apiKey = "11976d7c9e336e8e53bba53c9faf5b9e";
@@ -114,8 +118,6 @@ function search(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-
-displayForecast();
 
 //Temperature Units °C & °F for current temp
 function convertToFahrenheit(event) {
