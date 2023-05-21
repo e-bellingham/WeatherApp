@@ -76,10 +76,6 @@ small {
 .weather-info {
   font-weight: 200px;
 }
-.icons {
-  text-align: center;
-  font-size: 50px;
-}
 
 .weather-info #sun {
   height: 64px;
@@ -100,8 +96,16 @@ small {
   font-size: 19px;
   text-align: left;
 }
-.weeklyTemp {
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 18px;
   color: white;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.6;
 }
 #search-form {
   margin-top: 10px;
@@ -127,8 +131,4 @@ small {
   color: rgb(45, 45, 44);
   text-decoration: none;
   transition: ease-in-out;
-}
-#weekdays {
-  font-size: 18px;
-  color: white;
 }
