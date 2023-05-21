@@ -83,6 +83,13 @@ function displayWeatherCondition(response) {
     response.data.wind.deg;
   document.querySelector("#current-humidity").innerHTML =
     response.data.main.humidity;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  console.log(response);
 }
 function search(event) {
   event.preventDefault();
