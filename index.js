@@ -71,12 +71,12 @@ function displayForecast(response) {
      alt=""
       width="42" />
     <div class="weather-forecast-temperature">
-      <span class="weather-forecast-temperature-max">${
+      <span class="weather-forecast-temperature-max">${Math.round(
         forecastDay.temp.max
-      }° </span>
-      <span class="weather-forecast-temperature-min">${
+      )}° </span>
+      <span class="weather-forecast-temperature-min">${Math.round(
         forecastDay.temp.min
-      }°</span>
+      )}°</span>
     </div>
   </div>`;
     }
@@ -117,21 +117,9 @@ function search(event) {
   event.preventDefault();
   let apiKey = "4aa15e89a630bc5454ae3d46ed22844b";
   let city = document.querySelector("#search-text-input").value;
-  let units = "metric";
+  let units = "imperial";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherCondition);
-
-  //let searchInput = document.querySelector("#search-text-input");
-  //let h2 = document.querySelector("#current-location");
-  // h2.innerHTML = searchInput.value;
-  // if (searchInput.value) {
-  // h2.innerHTML = searchInput.value;
-  // } else {
-  // h2.innerHTML = null;
-  //  alert("Please type a city...");
-  // }
-  //Make an Api call to OpenWeather API
-  //Once I get the HTTP response, we display the city name and temp
 }
 
 let form = document.querySelector("#search-form");
@@ -158,7 +146,3 @@ function convertToCelcius(event) {
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", convertToCelcius);
-//building Weekly Forecast:
-// 1st- build HTML and CSS for forecast
-// 2nd -Add API call to get the forecast; API
-// 3rd- replace fake data with real data; JS
