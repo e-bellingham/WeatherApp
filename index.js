@@ -43,8 +43,15 @@ let dateInput = `${month} ${date}, ${year}`;
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${month} ${date}, ${year}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data);
   let forecast = response.data.list;
   let forecastElement = document.querySelector("#weather-forecast");
 
@@ -54,22 +61,29 @@ function displayForecast(response) {
       forecastHTML +
       `
     <div class="col-2">
-      <div class="weather-forecast-date">${forecastDay.dt}</div>
-     <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+      <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+     <img src="http://openweathermap.org/img/wn/${
+       forecastDay.weather[0].icon
+     }@2x.png"
      alt=""
       width="42" />
     <div class="weather-forecast-temperature">
-      <span class="weather-forecast-temperature-max">${forecastDay.main.temp_max}° </span>
-      <span class="weather-forecast-temperature-min">${forecastDay.main.temp_min}°</span>
+      <span class="weather-forecast-temperature-max">${
+        forecastDay.main.temp_max
+      }° </span>
+      <span class="weather-forecast-temperature-min">${
+        forecastDay.main.temp_min
+      }°</span>
     </div>
   </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 function getForecast(coordinates) {
-  let apiKey = "210d99196a88b9257ed8cb3535a0a0c5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "11976d7c9e336e8e53bba53c9faf5b9e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
   console.log(apiUrl);
 }
