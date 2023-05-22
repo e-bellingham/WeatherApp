@@ -82,7 +82,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "11976d7c9e336e8e53bba53c9faf5b9e";
+  let apiKey = "4aa15e89a630bc5454ae3d46ed22844b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
   console.log(apiUrl);
@@ -111,7 +111,7 @@ function displayWeatherCondition(response) {
 
 function search(event) {
   event.preventDefault();
-  let apiKey = "11976d7c9e336e8e53bba53c9faf5b9e";
+  let apiKey = "4aa15e89a630bc5454ae3d46ed22844b";
   let city = document.querySelector("#search-text-input").value;
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
